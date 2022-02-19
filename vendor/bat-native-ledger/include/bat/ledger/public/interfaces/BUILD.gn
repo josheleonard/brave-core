@@ -6,6 +6,19 @@ mojom("interfaces") {
     "ledger_database.mojom",
   ]
 
+  cpp_typemaps = [
+    {
+      types = [
+        {
+          mojom = "ledger.mojom.VirtualGrantSpendStatus"
+          cpp = "::sync_pb::VgSpendStatusSpecifics"
+        },
+      ]
+
+      traits_headers = [ "ledger_mojom_traits.h" ]
+    },
+  ]
+
   public_deps = [
     "//mojo/public/mojom/base",
   ]
